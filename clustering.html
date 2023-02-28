@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>ML Project</title>
+  <title>ML Project - Clustering</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -67,7 +67,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#about">Introduction</a></li>
-          <li><a href="#services">Data Prep & EDA</a></li>
+          <li><a href="dataprep.html">Data Prep & EDA</a></li>
           <li><a href="#portfolio">Conclusion</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -81,7 +81,7 @@
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
               </li> -->
-              <li><a href="#">ARM</a></li>
+              <li><a href="arm.html">ARM</a></li>
               <li><a href="#">NaiveBayes</a></li>
               <li><a href="#">DecTrees</a></li>
               <li><a href="#">Regression</a></li>
@@ -129,14 +129,54 @@
         <div class="row justify-content-between gy-4 mt-4">
           <div class="col-lg-10">
             <div class="portfolio-description">
+
+              <h1>Overview</h1>
+
+              <p>
+                Clustering is a type of unsupervised learning algorithm used in machine learning and data mining that groups together data points that are similar to each other. The goal of clustering is to identify groups, or clusters, of data points that are similar to each other and different from data points in other groups. The process of clustering involves finding the similarity between data points and grouping them based on that similarity.
+              </p>
+
+              <img class="img-fluid rounded-4 mb-4" src="assets/img/clustering_pic1.png">
+
+              <p>
+                There are many different similarity measures that can be used for clustering data, depending on the type of data being analyzed and the goals of the analysis. Some common similarity measures include Euclidean distance, Manhattan distance, and cosine similarity. Euclidean distance measures the straight-line distance between two points in n-dimensional space, while Manhattan distance measures the distance between two points by summing the absolute differences between their coordinates. Cosine similarity measures the angle between two vectors and is often used for text data, where each document is represented as a vector of word frequencies.
+              </p>
+              <p>
+                When clustering data, it is important to choose the right similarity measure for the type of data being analyzed and the goals of the analysis. Choosing the right similarity measure can help to ensure that data points are grouped together in a meaningful way and that the resulting clusters are useful for the intended purpose. In general, similarity measures should be chosen based on their ability to capture the important features of the data and to distinguish between different groups of data points.
+              </p>
+              <p>
+                There are two main types of clustering methods: partition and hierarchical clustering. Partition clustering algorithms, such as k-means and fuzzy c-means, partition the data into a fixed number of clusters based on a similarity measure. The algorithm iteratively moves data points between clusters in order to minimize the total distance between data points and their cluster centroids. Partition clustering is a fast and efficient way to cluster large datasets, but it can be sensitive to the initial placement of cluster centroids and may not be suitable for datasets with complex or non-linear structures.
+              </p>
+
+              <img class="img-fluid rounded-4 mb-4" src="assets/img/kmeans_pic2.png">
+
+              <p>
+                On the other hand, hierarchical clustering algorithms, such as agglomerative and divisive clustering, create a hierarchical structure of clusters based on the similarity between data points. Agglomerative clustering starts with each data point in its own cluster and iteratively merges the most similar clusters until all data points are in a single cluster. Divisive clustering starts with all data points in a single cluster and iteratively divides the cluster into smaller clusters based on their dissimilarity. Hierarchical clustering can be useful for exploring the structure of complex datasets, but it can be computationally expensive and may not be suitable for large datasets.
+              </p>
+
+              <img class="img-fluid rounded-4 mb-4" src="assets/img/hclust_pic1.png">
+
+              <p>
+                In summary, clustering is a powerful technique for analyzing and understanding complex datasets. By identifying groups of similar data points, clustering can help to reveal underlying patterns and relationships in the data. The choice of clustering algorithm and similarity measure will depend on the nature of the data being analyzed and the goals of the analysis.
+              </p>
+
+              <p>
+                In this project, we will use two different clustering algorithms, k-means clustering and hierarchical clustering, to analyze the Amazon reviews dataset. The goal of this analysis is to observe how these algorithms can separate different categories of products and different review ratings based on the similarity between the reviews. We will use the k-means algorithm with the Euclidean distance similarity measure and the hierarchical clustering algorithm with the cosine similarity measure to cluster the reviews.
+              </p>
+              <p>
+                The k-means algorithm is a partition clustering algorithm that is commonly used for clustering large datasets. It partitions the data into a fixed number of clusters based on the similarity measure. In our case, we will use the Euclidean distance as the similarity measure to determine the distance between data points. This algorithm will allow us to cluster reviews based on their similarity, which can help us to identify different categories of products and review ratings. On the other hand, hierarchical clustering is a method that creates a hierarchical structure of clusters based on the similarity between data points. We will use the cosine similarity measure to cluster the reviews in a hierarchical structure, which can help us to identify clusters at different levels of granularity. This approach can reveal the underlying structure of the data and help us to gain insights into the relationships between different products and review ratings in the Amazon reviews dataset.
+              </p>
+
               <h1>K-Means Clustering</h1>
               <p>
                 For preparing the data for clustering, we will use the data files containing metadata and user reviews that were collected and processed earlier (described in <a href="dataprep.html">Data Prep and EDA</a>).
               </p>
-              <p>Links to these data files:</p>
+              <p>Links to these data and code files :</p>
               <ul>
                 <li>Metadata: <a href="https://github.com/anup44/machine_learning_project/blob/main/meta_df_1000_cleaned.parquet">https://github.com/anup44/machine_learning_project/blob/main/meta_df_1000_cleaned.parquet</a></li>
                 <li>User reviews data: <a href="https://github.com/anup44/machine_learning_project/blob/main/reviews_df_clean.parquet">https://github.com/anup44/machine_learning_project/blob/main/reviews_df_clean.parquet</a></li>
+                <li>K-Means clustering Code: <a href="https://github.com/anup44/machine_learning_project/blob/main/clustering_and_arm.ipynb">https://github.com/anup44/machine_learning_project/blob/main/clustering_and_arm.ipynb</a></li>
+                <li>Hierarchical clustering Code: <a href="https://github.com/anup44/machine_learning_project/blob/main/h_clust.R">https://github.com/anup44/machine_learning_project/blob/main/h_clust.R</a></li>
               </ul>
 
               <p>In order to prepare the dataset for clustering, some transformations of the dataset were required. The steps and a view of the final processed dataset are described in detail in the following section. There are 3 different transformations of the data that were used for the clustering analysis. These different forms of transformations were decided based on the observations in the each of the preceding analysis results. These results and the motivation for each of the trabsformations have been described below.
@@ -209,19 +249,32 @@ clus_df1.head()</code></pre>
 
               <p>We will drop these rows.</p>
 
-              <pre><code class="language-python line-numbers">clus_df1 = clus_df1[~clus_df1['brand'].str.fullmatch('')]</code></pre>
+              <pre><code class="language-python line-numbers">clus_df1 = clus_df1[~clus_df1['brand'].str.fullmatch('')]
+clus_df1.sample(10)</code></pre>
+
+              <img class="img-fluid rounded-4 mb-4" src="assets/img/clus_df1_brand2.png">
+
+              <p>We see that the output now does not have the missing brands. But what about prices?</p>
 
               <p>The ouput of the <code>info()</code> call on <code>merged_df</code> showed that prices have <code>3066</code> non-null values out of 5921. We also need to handle these missing values. Since we cannot drop all these rows, we will use the mean of proces in each category to fill them.</p>
 
               <pre><code class="language-python line-numbers">clus_df1['price'] = clus_df1.groupby(['category_1']).price.transform(lambda x: x.fillna(x.mean()))
-clus_df1 = clus_df1.dropna(subset='price')</code></pre>
+clus_df1 = clus_df1.dropna(subset='price')
+clus_df1.sample(10)</code></pre>
+
+              <img class="img-fluid rounded-4 mb-4" src="assets/img/clus_df1_price.png">
+
+              <p>In the ouptput above, all the rows have prices values filled in.</p>
+
           
               <p>We will also create bins for the <code>found_helpful</code> column in the same way that we did in <a href="dataprep.html">Data Prep and EDA</a>. We are doing this because this column has a large number of small values and a few very large values. Any form of normalization will, in my opinion, lead to high disparities in values and so having bins that are based on observed frequencies of values in the column can make these values more comparable.</p>
 
               <pre><code class="language-python line-numbers">clus_df1['found_helpful_bins'] = pd.cut(clus_df1.found_helpful, [0,1,2,3,4,6,11,651], include_lowest=True, labels=np.arange(7))
 clus_df1['verified_purchase'] = clus_df1['verified_purchase'].astype(int)</code></pre>
 
-              <p>In the above snippet, <code>verified_purcahse</code> column was also converted to being numeric since it is a boolean variable.</p>
+              <img class="img-fluid rounded-4 mb-4" src="assets/img/clus_df1_fhbins.png">
+
+              <p>In the above snippet, <code>verified_purcahse</code> column was also converted to being numeric since it is a boolean variable. We can see a new column in the output that has the corresponding bins for the <code>found_helpful</code> column based on our cuts.</p>
 
               <p>As a last step, the <code>brand</code> and <code>category_1</code> columns need to be converted to one-hot encoding in order to be included in the clustering.</p>
 
@@ -881,7 +934,7 @@ ggplot(reviews_cl1, aes(x = factor(category_1), y = factor(cluster))) +
             <h2>Conclusion</h2>
             <p>We have made quite a few observations while performing all the analysis above using K-Means clustering and heirarchical clustering. Our goal was to determine of clustering data using similarity measures, can help us find some patterns wothin the dataset and to observe what methods and measures of distance provide what information. In out analysis using using K-Means clustering, we first made use of numerical columns in our dataset. We observed that the numerical columns in the dataset contained very sparce information. The column <code>found_helpful</code> comtained very skewed data and had mostly <code>0 and 1</code> in a large percent of the rows. Therefore it did not hold a lot of information required to differetiate points in our dataset. Similarly the <code>brand</code> column contained few popular barnds and a lot of unpopular brands with just a handful of products. As a result, when it was converted to one-hot encoding, the number of dimension blew-up and not a lot of information was added. The euclidean distance between any two rare brands, for example, would just be sqrt(2) and this would not provide usable distances between data points. Other than these, we had <code>verified_purchase</code> column which was a binary field. All these issues made it difficut to find dissimilarities within points in the dataset.</p>
 
-            <p>Having made these observations, an attempt was made to use the text content of each review to cluster the data as this might hold a lot of information about how good the product is or what the product is good or bad at. Although, while tranforming the text data to vectors that out algorithms can handle, what information is retained greatly depends on what tranformation we use. In this case, CountVectorizer and TfidfVectorizer were used. We did not observe any interesting patterns in both of these cases. The reason might be that we were using vectors with 14k dimensions and only 6K data points.This made the transform vectors very sparce and as a result, euclidean distance was not able to efficiently distinguish between data points. We may also attribute the observed results to the tranformations we used. CountVectorizer contains the counts of all the words used in the data, and as long as a there is very little overlap in the words used, the euclidean distance measure is not going to provide meaningful distances and there is no common dimension to compare on. These claims are also supported by the observed silhouette plots. We found very bad clusters with huge number of points with negative silhouette coefficients. This conveys that KMeans had created clusters where no clear clusters could actually be created.
+            <p>Having made these observations, an attempt was made to use the text content of each review to cluster the data as this might hold a lot of information about how good the product is or what the product is good or bad at. Although, while tranforming the text data to vectors that out algorithms can handle, what information is retained greatly depends on what tranformation we use. In this case, CountVectorizer and TfidfVectorizer were used. We did not observe any interesting patterns in both of these cases. The reason might be that we were using vectors with 14k dimensions and only 6K data points. This made the transform vectors very sparce and as a result, euclidean distance was not able to efficiently distinguish between data points. We may also attribute the observed results to the tranformations we used. CountVectorizer contains the counts of all the words used in the data, and as long as a there is very little overlap in the words used, the euclidean distance measure is not going to provide meaningful distances and there is no common dimension to compare on. These claims are also supported by the observed silhouette plots. We found very bad clusters with huge number of points with negative silhouette coefficients. This conveys that KMeans had created clusters where no clear clusters could actually be created.
             </p>
 
             <p>We then tried to use heirarchical using cosine similarity. Cosine similarity is expected to work better with hight dimensional sparse data. This time we directly jumped to data transformed using the TfidfVectorizer since our observations during K-Means clustering had confirmed that the numerical data did not contain a lot of information to work with. Here we wanted to observe if the data could be separated into clusters in any meaningful manner. So we computer the distance matrix based on cosine similarity and clustered the data using agglomerative heirarchical clustering. To make analysis we cut the tree at 10 clusters and made analysis to observe patterns in the clusters. We made use of <code>average</code>, <code>ward.D</code> and <code>complete</code> linkage methods for the clustering. We observed that <code>average</code> methods was barely able to distinguish between clusters and created on large cluster with very few points in all other clusters. with <code>ward.D</code>, we did observe some distribution in the number of points in each cluster but there was not notable relationship between these clusters and <code>rating/category</code> columns in the dataset. In case of <code>complete</code> linkage method, we made some interesting observations and the clusters created were able to create some separation with respect to product categories. Although these relationships were not strong, this was the best result we obtained during our analysis in this section. 
@@ -889,6 +942,12 @@ ggplot(reviews_cl1, aes(x = factor(category_1), y = factor(cluster))) +
 
             <p>Throughout this analysis we were able to work with and compare the results on clustering using different distance measures and algorithms. Although the final results were not as eciting, we did gain a deeper understanding of our dataset and the workings of the variuos algorithms and methods used.</p>
 
+            <p>
+              In conclusion, our analysis of the Amazon reviews dataset using clustering techniques has provided valuable insights into the relationships between different categories of products and review ratings. By using k-means clustering and hierarchical clustering, we were able to observe how the data can be grouped into distinct clusters, providing a visual representation of the patterns and relationships within the data. These insights can be useful for businesses to better understand their customers and improve their offerings. For example, businesses can use these clustering results to identify which products are popular among different customer segments, and tailor their marketing and product development strategies accordingly.
+            </p>
+            <p>
+              Overall, the clustering analysis using k-means and hierarchical clustering has demonstrated the usefulness of these techniques in exploring and understanding complex datasets, and can be used in a wide range of applications in various industries.
+            </p>
 
             </div>
 
