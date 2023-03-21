@@ -256,6 +256,8 @@
 
               <p>Shown below is a sample of the dataset used for this part.</p>
 
+              <img class="img-fluid rounded-4 mb-4" src="assets/img/dt_data_sample.png">
+
               <p>Since supervised learning methods need to work well on unseen data, that is, the data that was not used for training, this dataset needs to be split into training and testing set. The training set will be used for building the decision tree and the testing set will be used to check if the model is able to predict well on unseen data. This way of measuring the performance of model is required to ensure that our model does not overfit on our data and is able to generalize on new data that might be required to predict on. Since collected data is not a perfect representation of population in most cases, machine learning models generally work better on the data that is used for training and have a slightly, or significantly, worse performance when new data is used for predictions. To account for this bias in the model performance, to some extent, we need to ensure that our training and testing set are disjoint so that we can simulate how the model might perform when it is deployed or used for making predictions.</p>
 
               <p>To create training and testing set, the function <code>train_test_split</code> from the sklearn package was used with <code>test_size = 0.2</code>. Below are two images, showing a sample of the data that was split into training and testing sets.</p>
