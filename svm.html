@@ -225,7 +225,7 @@
 
               <p>
                 There are many kernels that are commonly used in SVMs. Some popular examples include, <code>linear</code>, <code>Radial Basis Function (RBF)</code>, <code>polynomial</code> and <code>sigmoid</code>. The polynomial kernel can be defined by the following equation,
-                $$K_{polynomial}(X_i, X_j) = (X_i^T X_j + r)^d$$.
+                $$K_{polynomial}(X_i, X_j) = (X_i^T X_j + r)^d$$
 
                 The RBF kernel looks like this.
                 $$K_{rbf}(X_i, X_j) = \exp{\left[-\frac{||X_i - X_j||^2}{2\sigma^2}\right]}$$
@@ -775,7 +775,7 @@ Car & Vehicle Electronics       0.51      0.46      0.48        52
 </code></pre>
 
               <p>
-                We see that we again observe very similar results. Increasing the regularization is not improving the performance of the model. In the next model, the regularization is decreased to see how this affects the prediction performance.
+                We see that we again observe very similar results. Decreasing the regularization is not improving the performance of the model. In the next model, the regularization is increased to see how this affects the prediction performance.
               </p>
 
               <pre><code class="language-python line-numbers">clf_svm2 = SVC(C=0.8, kernel='linear', degree=3, 
@@ -873,7 +873,7 @@ Car & Vehicle Electronics       0.00      0.00      0.00        52
 </code></pre>
 
               <p>
-                The next model increases the regularization further.
+                The next model decreases the regularization further.
               </p>
 
               <pre><code class="language-python line-numbers">clf_svm3 = SVC(C=1.4, kernel='poly', degree=3, 
@@ -905,7 +905,7 @@ Car & Vehicle Electronics       0.00      0.00      0.00        52
 </code></pre>
 
               <p>
-                No change in performance is observed. Lets decrease the regularization in the next model.
+                No change in performance is observed. Lets increase the regularization in the next model.
               </p>
 
               <pre><code class="language-python line-numbers">clf_svm3 = SVC(C=0.8, kernel='poly', degree=3, 
@@ -1030,7 +1030,7 @@ Car & Vehicle Electronics       1.00      0.04      0.07        52
              weighted avg       0.75      0.50      0.42      1003</code></pre>
   
               <p>
-                Although the performance has increased slightly, a majority of points from all classes are still being classified as <code>Computers & Accessories</code>. Lets try a model with smaller regularization.
+                Although the performance has increased slightly, a majority of points from all classes are still being classified as <code>Computers & Accessories</code>. Lets try a model with larger regularization.
               </p>
 
               <pre><code class="language-python line-numbers">clf_svm5 = SVC(C=0.8, kernel='rbf', degree=3, 
