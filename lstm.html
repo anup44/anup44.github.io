@@ -543,6 +543,11 @@ predictions = adam_optimizer.predict(input_layer, X_test, y_test, batch_size=32,
                 Now lets take a look at how gradients backpropagate through the LSTM network. An important thing to note in case of any recurrent network is that gradients flow into each timestep from two directions. One from the loss created as a result of the outputs of current timestep and the second is the gradient flowing in from the next timestep. This can complicate things as the loss at timestep $t$ needs to be backpropagated to all the previous timesteps in the sequence. And this again needs to happen for losses at every timestep in the sequence.
               </p>
 
+              <figure class="d-block text-center">
+                <img class="col-11 img-fluid rounded-4 mb-4" src="assets/img/lstm2.png">
+                <figcaption class="blockquote-footer">Source: <cite title="Source URL">https://en.wikipedia.org/wiki/Recurrent_neural_network</cite></figcaption>
+              </figure>
+
               <p>
                 However, we can break down the total loss due to time step $t$ $(L)$ in to two parts: $L^{[t]}$ and $L'$, where $L^{[t]}$ is the loss at this timestep and $L'$ is the sum of all the losses from $t + 1$ till the end. Next, we can start the backpropagation through timesteps in the reverse direction, and follow these steps:
                 <ol>
