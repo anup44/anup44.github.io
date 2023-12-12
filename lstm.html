@@ -69,10 +69,10 @@
           <li><a href="index.html#about">Introduction</a></li>
           <li><a href="index.html#navigation">Sections</a></li>
           <li><a href="index.html#conclusion">Conclusion</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>Show more</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="dataprep.html">Data Prep & EDA</a></li>
-              <li><a href="clustering.html">Clustering</a></li>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#data-gathering">Data Gathering</a></li>
               <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -82,13 +82,8 @@
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
               </li> -->
-              <li><a href="arm.html">ARM</a></li>
-              <li><a href="naivebayes.html">Naive Bayes</a></li>
-              <li><a href="decisiontree.html">Decision Trees</a></li>
-              <li><a href="svm.html">SVM</a></li>
-              <li><a href="linreg.html">Linear Regression</a></li>
-              <li><a href="neuralnets.html">Neural Networks</a></li>
-              <li><a href="#">Recurrent Neural Networks</a></li>
+              <li><a href="#model-implementation">Model Implementation</a></li>
+              <li><a href="#results">Results</a></li>
               
             </ul>
           </li>
@@ -133,7 +128,7 @@
         <div class="row justify-content-between gy-4 mt-4">
           <div class="col-lg-10">
             <div class="portfolio-description">
-              <h2>Overview</h2>
+              <h2 id="overview">Overview</h2>
 
 
               <p>
@@ -182,7 +177,7 @@
                 </ul>
               </p>
 
-              <h2>Data Gathering</h2>
+              <h2 id="data-gathering">Data Gathering</h2>
 
               <p>
                 For the purpose of testing the LSTM cell, created as part of this project, and to observe if they function as good as the well established frameworks, two datasets will be utilized. These datasets are chosen because results using a trusted frameworks and very similar modelling setups are available and therefore make them ideal candidates to test the networks created in this project.
@@ -242,7 +237,7 @@
                 </figcaption>
               </figure>
 
-              <h2>Model implementation</h2>
+              <h2 id="model-implementation">Model implementation</h2>
 
               <p>
                 This section describes the implementation of neural networks that use the Long Short Term memory cells to create Recurrent networks capable of dealing with sequential data. The section is divided into parts that go over the modelling API and classes used in the implementation, discuss the theoretical LSTM model, and how to adapt the same model in code.
@@ -816,7 +811,7 @@ predictions = adam_optimizer.predict(input_layer, X_test, y_test, batch_size=32,
                 This feature is handy in various scenarios. For instance, when dealing with tasks like sequence prediction, where each timestep's prediction is valuable, setting <code>return_seq</code> to <code>True</code> ensures you get a detailed output for every step. However, in tasks where you only need the model's final understanding of the entire sequence, setting <code>return_seq</code> to <code>False</code> simplifies the output, making it more efficient. The flexibility of <code>return_seq</code> adds versatility to the LSTM layer, allowing it to adapt to different requirements in sequence-based tasks.
               </p>
 
-              <h2>Results</h2>
+              <h2 id="results">Results</h2>
 
               <p>
                 The implemented LSTM layer along with other components of neural networks were tested on 2 datasets described in the Data Gathering section. The models built using the implementation in this project were compared against similar models built using frameworks like keras and pytorch. This would help test if the models built using this API are working as expected in performing all the necessary operation while training and inferencing on a dataset.
@@ -1020,11 +1015,11 @@ out = Activation(func='softmax')(dense)</code></pre>
         <div class="col-lg-10 col-12 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="https://github.com/anup44/machine_learning_project" target="_blank"><strong>All code files:</strong> https://github.com/anup44/machine_learning_project</a></li>
-            <li><a href="https://jmcauley.ucsd.edu/data/amazon_v2/metaFiles2/meta_Electronics.json.gz" target="_blank"><strong>Amazon products metadata for Electrinics category:</strong> https://jmcauley.ucsd.edu/data/amazon_v2/metaFiles2/meta_Electronics.json.gz</a></li>
-            <li><a href="https://github.com/anup44/machine_learning_project/blob/main/product_reviews_1000.json" target="_blank"><strong>Scraped Product reviews data:</strong> https://github.com/anup44/machine_learning_project/blob/main/product_reviews_1000.json</a></li>
-            <li><a href="https://github.com/anup44/machine_learning_project/blob/main/tokens_tfidf_vectorized_sample.csv" target="_blank"><strong>TFIDF Vectorized sample data:</strong> https://github.com/anup44/machine_learning_project/blob/main/tokens_tfidf_vectorized_sample.csv</a></li>
-            <li><a href="https://github.com/anup44/machine_learning_project/blob/main/neural_nets.ipynb" target="_blank"><strong>Code for Neural Netwoks:</strong> https://github.com/anup44/machine_learning_project/blob/main/neural_nets.ipynb</a></li>
+            <li><a href="https://github.com/anup44/lstm-from-scratch.git" target="_blank"><strong>All code files:</strong> https://github.com/anup44/lstm-from-scratch.git</a></li>
+            <li><a href="https://kartik2112.medium.com/lstm-back-propagation-behind-the-scenes-andrew-ng-style-notations-7207b8606cb2" target="_blank"><strong>LSTM Backpropagation reference:</strong> https://kartik2112.medium.com/lstm-back-propagation-behind-the-scenes-andrew-ng-style-notations-7207b8606cb2</a></li>
+            <li><a href="https://aclanthology.org/S18-1005" target="_blank"><strong>SemEval2018 - Irony Detection:</strong> https://aclanthology.org/S18-1005</a></li>
+            <li><a href="https://keras.io/api/datasets/reuters/" target="_blank"><strong>Reuters dataset:</strong> https://keras.io/api/datasets/reuters/</a></li>
+            </li>
           </ul>
         </div>
 
